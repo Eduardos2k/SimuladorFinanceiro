@@ -1,0 +1,1 @@
+Esse projeto foi baseado nas calculadoras do Investidor Sardinha (Raul Sena).
