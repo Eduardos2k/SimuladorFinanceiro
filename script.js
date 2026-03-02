@@ -1,6 +1,6 @@
 const botaoCalcular = document.getElementById("btn_calcular");
 
-
+let montanteTotal = 0;
 
 botaoCalcular.addEventListener("click", function(){
 
@@ -16,10 +16,29 @@ botaoCalcular.addEventListener("click", function(){
 
     let tempoFinal = tempoRendimento;
 
+    tempoFinal = tempoFinal;
+
     if(tipoTempo === "anual"){
         tempoFinal = tempoFinal * 12;
     }
 
-    console.log("Tempo total em meses para o cálculo: ", tempoFinal);
 
+    let taxaMensal = (1 + taxaCdi/100 ) ** (1/12) - 1;
+    
+
+    montanteTotal = investimentoInicial
+
+    for(let i = 0; i < tempoFinal; i++){
+        montanteTotal = montanteTotal * (1 + taxaMensal);
+        montanteTotal = montanteTotal + investimentoMensal;
+    }
+    
+    let montanteFormatado = montanteTotal.toFixed(2);
+    document.getElementById("texto_resultado").innerText = `O montante final é : R$ ${montanteFormatado}`;
 });
+
+
+
+
+
+
