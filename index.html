@@ -10,7 +10,7 @@
 </head>
 <body>
 <br>
-<div>
+<div class="card_calculadora">
     <h2 id="titulo_site">Calculadora de CDB</h2>
 
     <label>Investimento Inicial</label>
@@ -19,16 +19,21 @@
     <label>Investimento Mensal</label>
     <input type="number" id="investimento_mensal">
     
-    <label>Taxa do CDI</label>
-    <input type="number" id="taxa_cdi">
-    
+    <label>Taxa SELIC</label>
+    <input type="number" id="taxa_selic">
+
+    <label>Rentabilidade (% do CDI)</label>
+    <input type="number" id="porcentagem_cdi" placeholder="100">
+
     <label>Tempo de Rendimento</label>
-    <input type="number" id="tempo_rendimento">
-    <select id="periodo">
-        <option value ="mensal">Mensal</option>
-        <option value ="anual">Anual</option>
-    </select>
-    
+    <div class="input_group">
+            <input type="number" id="tempo_rendimento">
+        <select id="periodo">
+            <option value ="mensal">Mensal</option>
+            <option value ="anual">Anual</option>
+        </select>
+    </div>
+
     <button id="btn_calcular">Calcular</button>
 
 </div>

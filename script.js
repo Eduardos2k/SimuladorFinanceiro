@@ -1,14 +1,17 @@
 const botaoCalcular = document.getElementById("btn_calcular");
 
-let montanteTotal = 0;
-
 botaoCalcular.addEventListener("click", function(){
+
+    let montanteTotal = 0;
 
     let investimentoInicial = Number(document.getElementById("investimento_inicial").value);
 
     let investimentoMensal = Number(document.getElementById("investimento_mensal").value);
 
-    let taxaCdi = Number(document.getElementById("taxa_cdi").value);
+    let taxaSelic = Number(document.getElementById("taxa_selic").value);
+
+    let porcentagemCdi = Number(document.getElementById("porcentagem_cdi").value);
+    porcentagemCdi = porcentagemCdi/100;
 
     let tempoRendimento = Number(document.getElementById("tempo_rendimento").value);
 
@@ -16,15 +19,16 @@ botaoCalcular.addEventListener("click", function(){
 
     let tempoFinal = tempoRendimento;
 
-    tempoFinal = tempoFinal;
 
     if(tipoTempo === "anual"){
         tempoFinal = tempoFinal * 12;
     }
 
-
-    let taxaMensal = (1 + taxaCdi/100 ) ** (1/12) - 1;
+    let taxaDi = taxaSelic - 0.1;
     
+    let rendimentoAnualBruto = taxaDi * porcentagemCdi;
+
+    let taxaMensal = (1 + (rendimentoAnualBruto)/100 ) ** (1/12) - 1;
 
     montanteTotal = investimentoInicial
 
