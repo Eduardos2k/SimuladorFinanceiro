@@ -5,27 +5,25 @@
 <head>
 <title>Simulador Financeiro</title>
 <link rel="stylesheet" href="style.css">
-
-
 </head>
+
 <body>
-<br>
 <div class="card_calculadora">
     <h2 id="titulo_site">Calculadora de CDB</h2>
 
-    <label>Investimento Inicial</label>
+    <label class="titulo_input_calculadora">Investimento inicial</label>
     <input type="number" id="investimento_inicial">
     
-    <label>Investimento Mensal</label>
+    <label class="titulo_input_calculadora">Investimento mensal</label>
     <input type="number" id="investimento_mensal">
     
-    <label>Taxa SELIC</label>
+    <label class="titulo_input_calculadora">Taxa SELIC</label>
     <input type="number" id="taxa_selic">
 
-    <label>Rentabilidade (% do CDI)</label>
-    <input type="number" id="porcentagem_cdi" placeholder="100">
+    <label class="titulo_input_calculadora">Rentabilidade (% do CDI)</label>
+    <input type="number" id="porcentagem_cdi" placeholder="100%">
 
-    <label>Tempo de Rendimento</label>
+    <label class="titulo_input_calculadora">Tempo de rendimento</label>
     <div class="input_group">
             <input type="number" id="tempo_rendimento">
         <select id="periodo">
@@ -38,12 +36,58 @@
 
 </div>
 
-<p id="texto_resultado">O resultado aparecera aqui!</p>
+<div class="card_relatorio" id="relatorio_investimento">
+    <div class="resultado_principal">
+        <span>Valor Final Bruto</span>
+        <h2 id="resultado_valor_bruto">R$ 0,00</h2>
+    </div>
+
+    <div class="tabela_refinada">
+        <table class="tabela_estilizada">
+            <thead>
+                <tr><td>Investimento Total</td><td id="valor_investido">R$ 0,00</td></tr>
+                <tr><td>Rendimento Bruto</td><td id="rend_bruto">R$ 0,00</td></tr>
+                <tr><td>Redimento Líquido</td><td id="rend_liquido">R$ 0,00</td></tr>
+                <tr><td>Imposto de Renda</td><td id="imposto">R$ 0,00</td></tr>
+                <tr class="valor_final_destaque"><td>Valor Final Líquido</td><td id="valor_liquido">R$ 0,00</td></tr>
+            </thead>
+        </table>
+    </div>
+    
+    <div class="informativo_ir">
+        <h4>Referência: Tabela Regressiva IR</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Prazo</th>
+                    <th>Imposto</th>
+                </tr>
+            </thead>
+                    <tbody>
+                        <tr id="ir_180">
+                            <td>Até 180 dias</td>
+                            <td>22,5%</td>
+                        </tr>
+                        <tr id="ir_360">
+                            <td>181 até 360 dias</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr id="ir_720">
+                            <td>361 até 720 dias</td>
+                            <td>17,5%</td>
+                        </tr>
+                        <tr id="ir_720+">
+                            <td>Acima de 720 dias</td>
+                            <td>15%</td>
+                        </tr>
+                    </tbody>
+        </table>
+    </div>
+
+</div>
+
+
 <script src="script.js"></script>
 </body>
-
-
-
-
 
 </html>
