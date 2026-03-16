@@ -10,9 +10,9 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    margin-top: -5%;
     margin: auto;
     padding: 10px 0;
+    padding-top: 5px;
     background-color: whitesmoke; 
     
     
@@ -22,9 +22,10 @@ body {
     background-color: white;
     padding: 10px;
     margin: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     box-shadow: 0px 4px 10px;
-    max-width: 400px;
+    max-width: 500px;
     width: 95%;
     margin: auto;
     
@@ -50,6 +51,15 @@ body {
     color:antiquewhite;
     font-weight: bold;
     font-size:x-small;
+}
+
+#btn_calcular:hover {
+    box-shadow: 0px 0px 14px rgba(0, 0, 255, 0.35);
+}
+
+#btn_calcular:active {
+    transform: scale(0.96);
+     box-shadow: 0px 0px 5px rgba(0, 0, 255, 0.3); 
 }
 
 input, select{
@@ -91,8 +101,10 @@ input::-webkit-inner-spin-button{
 
 .input_group{
     display: flex;
+    box-sizing: border-box;
     border-radius: 0px;  
     width: 100%;
+
 } 
 
 .input_group input{
@@ -165,4 +177,84 @@ input::-webkit-inner-spin-button{
 .valor_final_destaque{
     font-weight: bold;
     background-color: #3be883;
+}
+
+#input_investimento_inicial{
+    display: flex;
+    align-items:center;
+    overflow: hidden;
+    
+    
+}
+.icone{
+
+    display: flex;
+    box-sizing: border-box;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    color: #555;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+.icone_input{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.6;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: transparent;
+    box-shadow: 0px 4px 10px;
+    width: 100%;
+    padding: 10px 10px;
+    top: 0;
+    margin-bottom: 30px;    
+    box-sizing: border-box;
+}
+
+.navbar_container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 500px;
+
+
+
+}
+
+.navbar_logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0000FF; 
+}
+
+.navbar_social {
+    display: flex;
+    gap: 20px;
+}
+
+.icone_social {
+    color: #555; 
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+
+.icone_social:hover {
+    color: #0000FF;
+    transform: translateY(-3px); 
 }

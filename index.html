@@ -4,27 +4,64 @@
 
 <head>
 <title>Simulador Financeiro</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<nav class="navbar">
+    <div class="navbar_container">
+    <div class="navbar_logo">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>CDB Calc by Eduardo Ferreira</span>
+    </div>
+    
+    
+    <div class="navbar_social">
+        <a href="https://github.com/Eduardos2k" target="_blank" class="icone_social">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/2keduardo" target="_blank" class="icone_social">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/eduardo.s2k" target="_blank" class="icone_social">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    </div>
+</nav>    
+
 <div class="card_calculadora">
     <h2 id="titulo_site">Calculadora de CDB</h2>
 
     <label class="titulo_input_calculadora">Investimento inicial</label>
-    <input type="number" id="investimento_inicial">
-    
+    <div id="input_investimento_inicial" class="input_group">
+        <span class="icone" id="icone_investimento_inicial">R$</span>
+        <input type="number" id="investimento_inicial">
+    </div>
+
     <label class="titulo_input_calculadora">Investimento mensal</label>
-    <input type="number" id="investimento_mensal">
-    
+    <div id="input_investimento_mensal" class="input_group">
+        <span class="icone" id="icone_investimento_mensal">R$</span>
+        <input type="number" id="investimento_mensal">
+    </div>
+
     <label class="titulo_input_calculadora">Taxa SELIC</label>
-    <input type="number" id="taxa_selic">
+    <div id="input_taxa_selic" class="input_group">
+        <span class="icone" id="icone_taxa_selic">%</span>
+        <input type="number" id="taxa_selic">
+    </div>
 
     <label class="titulo_input_calculadora">Rentabilidade (% do CDI)</label>
-    <input type="number" id="porcentagem_cdi" placeholder="100%">
+    <div id="input_rentabilidade" class="input_group">
+        <span class="icone" id="icone_porcentagem_cdi">%</span>
+        <input type="number" id="porcentagem_cdi" placeholder="100">
+    </div>
 
     <label class="titulo_input_calculadora">Tempo de rendimento</label>
-    <div class="input_group">
+    <div id="input_tempo" class="input_group">
+            <span class="icone" id="icone_tempo_redimento"><img src="assets/icons/tempo-dinheiro.png" alt="Tempo" class="icone_input"></span>
             <input type="number" id="tempo_rendimento">
         <select id="periodo">
             <option value ="mensal">Mensal</option>
@@ -36,7 +73,7 @@
 
 </div>
 
-<div class="card_relatorio" id="relatorio_investimento">
+<div class="card_relatorio" id="relatorio_investimento" style="display: none;">
     <div class="resultado_principal">
         <span>Valor Final Bruto</span>
         <h2 id="resultado_valor_bruto">R$ 0,00</h2>
